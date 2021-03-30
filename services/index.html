@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+	<script type="text/javascript" src = "app.js"></script>
+	<script type="text/javascript" src = "factoryService.js"></script>
+	<script type="text/javascript" src = "service.js"></script>
+	
+</head>
+<body ng-app = "app">
+	<div ng-controller = "ctrl">
+
+		<input type="text" ng-model = "employee.name"/><br>
+		<input type="text" ng-model = "employee.city"/><br>
+		<input type="text" ng-model = "employee.age"/><br>
+		<button ng-click = "save(employee)">save</button>
+		</div>
+</body>
+</html>

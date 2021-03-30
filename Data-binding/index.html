@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+	<script type="text/javascript" src = "app.js"></script>
+</head>
+<body ng-app = "app">
+
+	
+	<div ng-controller = "ctrl">
+		<!--one way data binding
+		 <span ng-bind  = "name"></span> -->
+		 <!-- value of a is {{a}}
+		 value of b is {{b}}
+		 <button ng-click = "sum()">sum</button>
+		 sum is {{result}}
+
+		 initial value of a is {{::a}} -->
+
+
+		 <input type = "text" ng-model = "name"/><hr>
+		 {{name}}
+		</div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<!-- Import library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+		
+		<!-- Create module -->
+		<script>
+			var app = angular.module("myapp", []);
+
+			// Create Controller
+			app.controller("ctrlA", function () {
+				this.text = "This is written by controller A";
+			});
+
+			// depenency injection, here scope is injected
+			app.controller("ctrlB", ["$scope", function (x) {
+				x.text = "This is written by controller B";
+			}]);
+
+			// controller inheritance
+			app.controller("ctrlC", ["$scope", function (x) {
+				x.text = "This is written by controller C";
+			}]);			
+
+		</script>
+	</head>
+
+	<body ng-app = "myapp">
+			<div style = "text-align: center;"><b>Controller Initialization</b></div>
+
+			<hr/>
+
+			<!-- ------------------------First Type ------------------------- -->
+			<ul>
+				<li>
+					<b>First Type:</b> By using "this" and "alias name".
+					<br/><br/>
+					<b>Note:</b> Without alias name it won't work
+					<br/><br/>
+					<form>
+						<fieldset>
+							<legend>First Type</legend>
+							<div ng-controller = "ctrlA as a">
+								{{a.text}}
+							</div>
+						</fieldset>
+					</form>
+				</li>
+			</ul>
+
+			<hr/>
+
+			<!-- ------------------------Second Type ------------------------- -->
+			<ul>
+				<li>
+					<b>Second Type:</b> By using scope
+					<br/><br/>
+					<b>Note:</b> No need alias names
+					<br/><br/>
+					<form>
+						<fieldset>
+							<legend>Second Type</legend>
+							<div ng-controller = "ctrlB">
+								{{text}}
+							</div>
+						</fieldset>
+					</form>
+				</li>
+			</ul>
+
+			<hr/>
+
+			<div style = "text-align: center;"><b>Controller Inheritance</b></div>			
+
+			<div ng-controller = "ctrlB">
+				<div ng-controller = "ctrlC">
+					{{text}}
+				</div>
+			</div>
+
+	</body>
+</html>
+

@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<!-- Import library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+		
+		<!-- Create module -->
+		<script>
+			var app = angular.module("myapp", []);
+
+			app.controller("myCtrl", [ "$scope", function($scope) {
+				$scope.name = "One way bind";
+			}]);
+		</script>
+
+		<style>
+
+			.content {
+				padding-left: 10px;
+			}
+
+		</style>
+	</head>
+
+	<body ng-app = "myapp" ng-controller = "myCtrl" >
+		<div style = "text-align: center;"><b>Data Binding</b></div>
+
+		<hr/>
+
+		<!-- ------------------------Concepts------------------------- -->
+		Types :
+
+		<ul>
+			<li>
+				One way Data-Binding
+			</li>
+			<li>
+				Two way Data-Binding
+			</li>
+			<li>
+				One Time Data-Binding
+			</li>
+		</ul>	
+
+		<!-- ------------------------One way Data-Binding------------------------- -->
+		<div class = "content">
+			<p><b>One way Data-Binding</b></p>
+			Printed by : 
+			<span ng-bind  = "name"></span>
+		</div>
+
+		<br/>
+
+		<!-- ------------------------One way Data-Binding------------------------- -->
+		<div class = "content">
+			<p><b>Two way Data-Binding</b></p>
+			<input type = "text" ng-model = "path" placeholder = "Enter a value" />
+		 	<p>Printed by two way: {{path}}</p>
+		</div>		
+
+		<!-- ------------------------One way Data-Binding------------------------- -->
+		<div class = "content">
+			<p><b>One Time Data-Binding</b>: Shows first intialized value. Printed using {::}</p>
+		 	Printed by one time bind: {{::path}}
+		</div>		
+
+	</body>
+</html>
+

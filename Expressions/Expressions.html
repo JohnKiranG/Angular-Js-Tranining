@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<!-- Import library -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"></script>
+		
+		<!-- Create module -->
+		<script>
+			var app = angular.module("myapp", []);
+		</script>
+	</head>
+
+	<body ng-app = "myapp" >
+		<div style = "text-align: center;"><b>Expressions</b></div>
+
+		<hr/>
+
+		<!-- ------------------------Concepts------------------------- -->
+		Types :
+
+		<ul>
+			<li>
+				Angular JS expressions
+			</li>
+			<li>
+				Angular JS Numbers
+			</li>
+			<li>
+				Angular JS Strings
+			</li>
+			<li>
+				Angular JS Objects
+			</li>
+			<li>
+				Angular JS Arrays
+			</li>
+		</ul>	
+
+		<hr/>
+
+		<div>
+			<b>Angular JS expressions</b><br/>
+			<p>Example for expression:
+				<input style = "background-color : {{myCol}} " ng-model = "myCol" placeholder="Type a color">
+			</p>
+		</div>
+
+		<br/>
+
+		<div>
+			<b>Angular JS Numbers</b><br/>
+			<p>Total in dollar: {{ 3 * 5 }}</p>
+		</div>		
+
+		<div>
+			<b>Angular JS Strings</b><br/>
+			<p>Name: {{ "Angular" + " " +  "JS" }}</p>
+		</div>	
+
+		<div ng-init =  "student = { name: 'Arron' }" >
+			<b>Angular JS Objects</b><br/>
+			<p>Student Name: {{student.name}}</p>
+		</div>	
+
+
+		<div ng-init =  "days = [ 'Mon,', 'Tue,', 'Wed,', 'Thurs,', 'Fri,', 'Sat']" >
+			<b>Angular JS Arrays</b><br/>
+			<p>
+				<span ng-repeat = "day in days">
+					{{day}}
+				</span>
+			</p>
+		</div>	
+
+	</body>
+</html>
+
